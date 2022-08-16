@@ -1,0 +1,21 @@
+.row{
+    display: flex;
+    width: 800px;
+    height: 50px;
+    border:  1px solid black;
+}
+
+.word,
+.transcription,
+.translation,
+.tags {
+    width: 200px;
+}
+
+.row:hover{
+    background-color: rgb(168, 193, 218);
+}
+
+.selected{
+    background-color: aquamarine;
+}

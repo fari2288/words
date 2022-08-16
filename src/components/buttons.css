@@ -1,0 +1,11 @@
+.buttons{
+    width: 100px;
+}
+.add:focus,
+.delete:focus{
+background-color: rgb(189, 150, 225);
+}
+.add:active,
+.delete:active{
+background-color: rgb(225, 142, 157);
+}

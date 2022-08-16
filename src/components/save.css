@@ -1,0 +1,9 @@
+.save{
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: green;
+}
+.input{
+    width: 50px;
+}
