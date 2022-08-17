@@ -1,6 +1,6 @@
 import './App.css';
 import words from './Components/List.jsx';
-import Cards from './Components/Cards.jsx';
+import Cards from './Components/Cards/Cards.jsx';
 
 function App(props) {
   return (
@@ -13,7 +13,13 @@ function App(props) {
       </div>
       {
         words.map((word)=>
-        <Cards word={word.word} transcription={word.transcription} translation={word.translation} tags={word.tags} isSelected={word.isSelected} isSaved={word.isSaved}/>)
+        <Cards 
+        word={word.word} 
+        transcription={word.transcription} 
+        translation={word.translation} 
+        tags={word.tags} 
+        isSelected={word.isSelected} 
+        isSaved={word.isSaved}/>)
       }
       
     </div>

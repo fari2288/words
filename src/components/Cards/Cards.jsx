@@ -1,8 +1,7 @@
 import './cards.css';
-import './colors.css';
-import './Buttons';
-import Buttons from './Buttons';
-import Save from './Save';
+import '../Buttons/Buttons';
+import Buttons from '../Buttons/Buttons';
+import Save from '../Save/Save';
 
 function Cards(props) {
 const {isSelected, isSaved}=props
