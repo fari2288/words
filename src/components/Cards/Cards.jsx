@@ -1,19 +1,35 @@
 import './cards.css';
-import '../Buttons/Buttons';
-import Buttons from '../Buttons/Buttons';
+import './buttons.css';
+import { useState } from 'react';
 import Save from '../Save/Save';
 
+
+
 function Cards(props) {
-const {isSelected, isSaved}=props
+    
+const {isSelected}=props;
+const [pressed, setPressed]=useState(false);
+
+    const handleChange=()=>{
+        setPressed(!pressed);
+    }
+    
+    const isSaved=props;
+
+
     return (
         <div className="wrapper">
         <div className={'row ' + (isSelected?'selected':'')}>
-        <div className="word">{props.word}</div>
+        <div className="word">{pressed?<input defaultValue={props.word}></input>:props.word}</div>
         <div className="transcription">{props.transcription}</div>
         <div className="translation">{props.translation}</div>
         <div className="tags">{props.tags}</div>
-        {isSaved?<Save isSaved={isSaved}/>:''}
-        <Buttons/>
+    
+        <div className='buttons'>
+            {pressed?<Save isSaved={isSaved}/>:''}
+<button onClick={handleChange}  className='add'>{pressed?'cancel':<i class="fa-solid fa-pencil"></i>}</button>
+<button className='delete'>{pressed?'':<i class="fa-solid fa-basket-shopping"></i>}</button>
+</div>
         </div>
         </div>
     );

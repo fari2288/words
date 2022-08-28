@@ -1,5 +1,6 @@
 .buttons{
-    width: 100px;
+    
+    width: 300px;
 }
 .add:focus,
 .delete:focus{

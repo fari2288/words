@@ -1,10 +1,12 @@
 import './App.css';
 import words from './Components/List.jsx';
 import Cards from './Components/Cards/Cards.jsx';
-
+import Header from './Components/Header/Header';
 function App(props) {
+  
   return (
     <div className="App">
+      <Header/>
       <div className='title'>
 <div className='wordTitle'>Word</div>
 <div className='transcriptionTitle'>Transcription</div>
