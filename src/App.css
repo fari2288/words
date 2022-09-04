@@ -13,3 +13,16 @@
 .tagTitle{
   width: 200px;
 }
+
+.card{
+  display: flex;
+  align-items: center;
+}
+.arrowLeft,
+.arrowRight{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-color: rgb(182, 175, 175);
+  border: none;
+}

@@ -1,14 +1,28 @@
+import './word.css';
+import words  from '../List';
+import { useState } from 'react';
 
+export default function Word(props){
+    const [pressed, setPressed]=useState(false);
 
-
-export default function Word(){
-
-
-
+    const handleChange=()=>{
+        setPressed(!pressed);
+    }
+    
+    
+    
     return(
-        <div>
-<div className="english"></div>
-<div className="translation"></div>
-        </div>
+        <div className="wordCard">
+            
+<div className="englishWord">
+    {words[0].word}<br/>
+</div>
+<input onClick={handleChange} className='inputEnglish' value={pressed?words[0].translation:'Показать перевод'}>
+    
+    
+</input>
+
+
+    </div>
     )
 }

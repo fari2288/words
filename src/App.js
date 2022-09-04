@@ -2,7 +2,12 @@ import './App.css';
 import words from './Components/List.jsx';
 import Cards from './Components/Cards/Cards.jsx';
 import Header from './Components/Header/Header';
+
+import CardList from './Components/CardList/CardList';
+
 function App(props) {
+  
+  
   
   return (
     <div className="App">
@@ -14,8 +19,8 @@ function App(props) {
 <div className='tagTitle'>Tags</div>
       </div>
       {
-        words.map((word)=>
-        <Cards 
+        words.map((word, index)=>
+        <Cards key={index}
         word={word.word} 
         transcription={word.transcription} 
         translation={word.translation} 
@@ -23,9 +28,9 @@ function App(props) {
         isSelected={word.isSelected} 
         isSaved={word.isSaved}/>)
       }
-      
+      <CardList/>
     </div>
-  );
+  )
 }
 
 export default App;
