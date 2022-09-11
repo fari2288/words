@@ -22,6 +22,7 @@ const [pressed, setPressed]=useState(false);
     return (
         
         <div className="wrapper">
+            
         <div className={'row ' + (isSelected?'selected':'')}>
         <div className="word">{pressed?<input defaultValue={props.word} ></input>:props.word}</div>
         <div className="transcription">{props.transcription}</div>

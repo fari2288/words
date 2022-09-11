@@ -1,6 +1,7 @@
 import Word from "../Word/Word";
 import { useState } from "react";
 import words from "../List";
+import './card.css';
 
 export default function CardList(props){
 
@@ -13,15 +14,15 @@ export default function CardList(props){
     }
 
     if (next===words.length){
-return <div className='card'>
+return <div className="wrap"><div className='card'>
         
 <button onClick={handleLeft} className='arrowLeft'><i className="fa-solid fa-arrow-left"></i></button>
-<div>
+<div className="word">
 <Word />
 
 {next}/{words.length}</div>
 
-</div>
+</div></div>
     }
     if (next===0){
         return <div className='card'>
