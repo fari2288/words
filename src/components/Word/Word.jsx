@@ -17,7 +17,7 @@ export default function Word(props){
 <div className="englishWord">
     {words[0].word}<br/>
 </div>
-<input onClick={handleChange} className='inputEnglish' value={pressed?words[0].translation:'Показать перевод'}>
+<input onChange={handleChange} className='inputEnglish' value={pressed?words[0].translation:'Показать перевод'}>
     
     
 </input>

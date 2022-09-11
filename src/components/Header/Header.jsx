@@ -8,6 +8,7 @@ import {
 
 import Cards from '../Cards/Cards';
 import CardList from '../CardList/CardList';
+import NoMatch from '../NoMatch/NoMatch'
 
 function Header(){
 
@@ -34,7 +35,7 @@ function Header(){
         <Routes>
             <Route exact path='/game' element={<CardList/>}/>
             <Route exact path='/home' element={<Cards/>}/>
-            <Route path='*' >404</Route>
+            <Route path='' element={<NoMatch/>}/>
         </Routes>
         </Router>
     )
