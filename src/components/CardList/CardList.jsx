@@ -3,7 +3,7 @@ import { useState } from "react";
 import words from "../List";
 import './card.css';
 
-export default function CardList(props){
+export default function CardList(){
 
     const [next, setNext]=useState(0)
     const handleLeft=()=>{
@@ -18,7 +18,6 @@ return <div className="wrap"><div className='card'>
         
 <button onClick={handleLeft} className='arrowLeft'><i className="fa-solid fa-arrow-left"></i></button>
 <div className="word">
-<Word />
 
 {next}/{words.length}</div>
 
@@ -29,7 +28,7 @@ return <div className="wrap"><div className='card'>
                 
         
         <div>
-        <Word />
+        
         
         {next}/{words.length}</div>
         <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
@@ -41,7 +40,7 @@ return <div className="wrap"><div className='card'>
         
       <button onClick={handleLeft} className='arrowLeft'><i className="fa-solid fa-arrow-left"></i></button>
       <div>
-      <Word />
+      <Word  {...words[next]}/>
       
       {next}/{words.length}</div>
       <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
