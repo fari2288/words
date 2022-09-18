@@ -35,7 +35,7 @@ function Header(){
         <Routes>
             <Route exact path='/game' element={<CardList/>}/>
             <Route exact path='/home' element={<Cards/>}/>
-            <Route path='' element={<NoMatch/>}/>
+            <Route path='/*' element={<NoMatch/>}/>
         </Routes>
         </Router>
     )
