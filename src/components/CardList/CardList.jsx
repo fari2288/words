@@ -28,7 +28,7 @@ return <div className="wrap"><div className='card'>
                 
         
         <div>
-        
+        <div className="zero">Нажмите "Вперед"</div>
         
         {next}/{words.length}</div>
         <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>

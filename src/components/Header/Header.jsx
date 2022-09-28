@@ -22,8 +22,7 @@ function Header(){
                 <ul><li>
                 <Link className='header__link' to='/game'>Карточки</Link>
                 </li>
-                </ul>
-                <ul><li>
+                <li>
                 <Link className='header__link' to='/home'>Главная страница</Link>
                 </li>
                 </ul></div>

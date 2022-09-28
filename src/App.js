@@ -1,7 +1,7 @@
 import './App.css';
-import words from './Components/List.jsx';
+import words from './Components/List.js';
 import Cards from './Components/Cards/Cards.jsx';
-import Header from './Components/Header/Header';
+import Header from './Components/Header/Header.jsx';
 
 
 function App(props) {
