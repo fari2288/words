@@ -17,15 +17,23 @@ function Header(){
         <Router>
         <div className='menu'>
             <nav className='header'>
-                <div className='logo'><i className="fa-solid fa-book"></i></div>
+                <ul>
+                <li>
+                <div className='logo'>
+                    <i className="fa-solid fa-book"></i></div>
+                </li>
+                </ul>
+                <ul>
                 <div className='links'>
-                <ul><li>
+                    
+                <li>
                 <Link className='header__link' to='/game'>Карточки</Link>
                 </li>
                 <li>
                 <Link className='header__link' to='/home'>Главная страница</Link>
                 </li>
-                </ul></div>
+                </div>
+                </ul>
             </nav>
             
             
