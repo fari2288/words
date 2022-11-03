@@ -2,10 +2,12 @@ import './cards.css';
 import './buttons.css';
 import './cards.css';
 import { useState } from 'react';
+import { useRef } from "react";
 
 
 function Cards({word, translation, transcription, tags}) {
-
+    
+const inputRef = useRef(null);
 const [isEditMode, changeEditMode]=useState(false);
 const isSelected={...word}
 const [save, setSaved]=useState({word, translation});
@@ -60,10 +62,11 @@ function onChangeTranslation(event){
             
         <div className='row'>
         <div className="word">
-            <input value={save.word} onChange={onChangeWord}/>
+        <input ref={inputRef} value={save.word} onChange={onChangeWord}/>
         </div>
         <div className="transcription">{transcription} </div>
-        <div className="translation"><input onChange={onChangeTranslation}  value={save.translation} ></input></div>
+        <div className="translation">
+        <input onChange={onChangeTranslation} value={save.translation} ></input></div>
         <div className="tags">{tags}</div>
     
         <div className='buttons'>

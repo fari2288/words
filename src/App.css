@@ -7,7 +7,7 @@
   justify-content: center;
   width: 800px;
   height: 50px;
-  border:  1px solid red;
+  border:  1px solid black;
 }
 
 .wordTitle,
@@ -28,4 +28,7 @@
   border-radius: 100%;
   background-color: rgb(182, 175, 175);
   border: none;
+}
+.wrap{
+  margin-top: 100px;
 }
