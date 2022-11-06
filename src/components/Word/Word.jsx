@@ -11,20 +11,23 @@ export default function CardList(props){
     
 const inputRef=useRef();
 
+  
 
     const [next, setNext]=useState(0);
-    
+    const [click, setWords]=useState(0);
+
     const handleLeft=()=>{
     setNext(next-1);
     inputRef.current.focus();
-    inputRef.current.style.color='red'
-    props.addWords();
+    inputRef.current.style.color='red';
+    setWords(click+1)
+    
     }
     const handleRight=()=>{
     setNext(next+1);
     inputRef.current.focus();
     inputRef.current.style.color='red';
-    props.addWords();
+    setWords(next+1)
     }
 
 
@@ -59,7 +62,8 @@ return <div>
 <div>
 <div className='end'>Конец</div>
 {next}/{words.length}</div>
-</div></div>
+</div>
+Изучено {click} слов</div>
     }
     if (next===0){
         return <div>
@@ -70,7 +74,8 @@ return <div>
         {next}/{words.length}</div>
         <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
         
-        </div></div>
+        </div>
+        Изучено {click} слов</div>
             }
             else{
     return <div>
@@ -81,6 +86,6 @@ return <div>
     {next}/{words.length}</div>
     <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
     
-    </div></div>}
+    </div>Изучено {click} слов</div>}
 
 }

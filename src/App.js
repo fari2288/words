@@ -12,15 +12,11 @@ import CardList from './Components/Word/Word.jsx';
 import './Components/Header/header.css';
 import Home from './Components/Home/Home';
 
-import { useState } from 'react';
 
 
 function App() {
   
-  const [click, setWords]=useState(0);
-  const addWords=()=>{
-setWords(click+1);
-  }
+  
 
 
 
@@ -46,7 +42,7 @@ setWords(click+1);
             
         </div>
         <Routes>
-            <Route path='/words' element={<CardList addWords={addWords}/>}/>
+            <Route path='/words' element={<CardList/>}/>
             <Route path='/list' element={<List/>}/>
             <Route path='/home' element={<Home/>}/>
         </Routes>
@@ -56,7 +52,7 @@ setWords(click+1);
 
         function List(){
           return(
-      <div className='wrap'><p>Изучено {click} слов</p>
+      <div className='wrap'>
       <div className='wrapper'>
       <div className='title'>
 <div className='wordTitle'>Word</div>
