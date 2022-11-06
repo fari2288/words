@@ -10,7 +10,7 @@ import words from './Components/List';
 import Cards from './Components/Cards/Cards.jsx';
 import CardList from './Components/Word/Word.jsx';
 import './Components/Header/header.css';
-
+import Home from './Components/Home/Home';
 
 import { useState } from 'react';
 
@@ -31,10 +31,14 @@ setWords(click+1);
             <div className='header'>
                 <div className='font'>English Words</div>
                   <ul className='links'>
-                    <li>
+                    
+                  <li>
+                      <Link to='home'>
+                  <p className='font'>Home</p></Link></li>
+                  <li>
                       <Link to='words'>
                   <p className='font'>Words</p></Link></li>
-                <li><Link to='home'><p className='font'>List</p></Link></li></ul>
+                <li><Link to='list'><p className='font'>List</p></Link></li></ul>
                 
             </div>
             
@@ -43,10 +47,15 @@ setWords(click+1);
         </div>
         <Routes>
             <Route path='/words' element={<CardList addWords={addWords}/>}/>
-            <Route path='/home' />
+            <Route path='/list' element={<List/>}/>
+            <Route path='/home' element={<Home/>}/>
         </Routes>
         </Router>
-        
+    </div>
+  )
+
+        function List(){
+          return(
       <div className='wrap'><p>Изучено {click} слов</p>
       <div className='wrapper'>
       <div className='title'>
@@ -66,9 +75,10 @@ setWords(click+1);
         isSaved={word.isSaved}
         />)
       }
-      </div>
-    </div>
-  )
+      </div>)}
+
+
+
 }
 
 export default App;
