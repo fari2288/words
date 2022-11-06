@@ -53,16 +53,24 @@ function Word({word, translation}){
 }
 
     if (next===words.length){
-return <div><div className='card'>
+return <div>
+<div className='card'>
+<button onClick={handleLeft} className='arrowLeft'><i className="fa-solid fa-arrow-left"></i></button>
+<div>
+<div className='end'>Конец</div>
 {next}/{words.length}</div>
-    <button onClick={handleLeft} className='arrowLeft'><i className="fa-solid fa-arrow-left"></i></button>
-    </div>
+</div></div>
     }
     if (next===0){
-        return <div><div className='card'>
+        return <div>
+        <div className='card'>
+        
+        <div>
+        <Word  {...words[next]}/>
         {next}/{words.length}</div>
         <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
-        </div>
+        
+        </div></div>
             }
             else{
     return <div>

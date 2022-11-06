@@ -2,7 +2,7 @@
     display: flex;
     width: 800px;
     height: 100px;
-    border:  1px solid green;
+    border:  1px solid rgb(19, 20, 19);
 }
 
 .word,
@@ -20,5 +20,5 @@
     justify-content: center;
 }
 .selected{
-    background-color: aquamarine;
+    background-color: rgb(85, 114, 125);
 }

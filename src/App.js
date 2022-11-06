@@ -28,33 +28,22 @@ setWords(click+1);
     <div className="App">
     <Router>
         <div className='menu'>
-            <nav className='header'>
-                <ul>
-                <li>
-                <div className='logo'>
-                    <i className="fa-solid fa-book"></i></div>
-                </li>
-                </ul>
-                <ul>
-                <div className='links'>
-                    
-                <li>
-                <Link className='header__link' to='/game'>Карточки</Link>
-                </li>
-                <li>
-                <Link className='header__link' to='/home'>Главная страница</Link>
-                </li>
-                </div>
-                </ul>
-            </nav>
+            <div className='header'>
+                <div className='font'>English Words</div>
+                  <ul className='links'>
+                    <li>
+                      <Link to='words'>
+                  <p className='font'>Words</p></Link></li>
+                <li><Link to='home'><p className='font'>List</p></Link></li></ul>
+                
+            </div>
             
             
             
         </div>
         <Routes>
-            <Route path='/game' element={<CardList addWords={addWords}/>}/>
+            <Route path='/words' element={<CardList addWords={addWords}/>}/>
             <Route path='/home' />
-            <Route path='/*' />
         </Routes>
         </Router>
         
