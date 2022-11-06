@@ -13,7 +13,7 @@
     padding-top: 100px;
     border-radius: 5px;
 }
-.inputEnglish{
+.button{
     width: 120px;
 background-color: rgb(161, 193, 209);
 border-radius: 5px;
@@ -21,9 +21,12 @@ border-style: none;
 height: 40px;
 text-align: center;
 cursor: pointer;
+outline: none;
 box-shadow: 5px 5px 5px rgb(61, 59, 95);
 }
 .arrowRight,
 .arrowLeft{
     cursor: pointer;
+    
 }
+

@@ -1,5 +1,4 @@
 .menu{
-    height: 100px;
     width: 100%;
     border: 1px solid black;
     position: fixed;
@@ -7,24 +6,16 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background-color: rgb(53, 53, 81);
+    background-color: rgb(30, 30, 44);
 }
-.logo{
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    background-color: aliceblue;
-    border: 1px solid black;
-}
+
 .links{
     display: flex;
 }
 ul{
     list-style: none;
+    text-decoration: none;
+    
 }
 
 .header{

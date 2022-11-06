@@ -25,7 +25,7 @@ function App() {
     <Router>
         <div className='menu'>
             <div className='header'>
-                <div className='font'>English Words</div>
+                <div className='englishFont'>English Words</div>
                   <ul className='links'>
                     
                   <li>
@@ -59,6 +59,7 @@ function App() {
 <div className='transcriptionTitle'>Transcription</div>
 <div className='translationTitle'>Translation</div>
 <div className='tagTitle'>Tags</div>
+<div className='tagTitle'></div>
       </div></div>
       {
         words.map((word, index)=>

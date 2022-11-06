@@ -16,13 +16,20 @@
 .tagTitle{
   width: 200px;
 }
-
 .card{
   display: flex;
   align-items: center;
 }
+
 .font{
   color: white;
+  list-style: none;
+  text-decoration: none;
+}
+.englishFont{
+  font-size: 40px;
+  color: white;
+  height: 50px;
 }
 .header{
   display: flex;
@@ -31,16 +38,17 @@
 .links{
   display: flex;
   justify-content: space-evenly;
+  height: 50px;
 }
 .arrowLeft,
 .arrowRight{
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  background-color: rgb(152, 151, 175);
+  background-color: rgb(118, 117, 142);
   border: none;
   box-shadow: 5px 5px 5px rgb(61, 59, 95);
 }
 .wrap{
-  margin-top: 100px;
+  margin-top: 200px;
 }

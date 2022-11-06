@@ -10,50 +10,27 @@ import './card.css';
 export default function CardList(props){
     
 const inputRef=useRef();
+const [click, setWords]=useState(0);
 
-  
+
 
     const [next, setNext]=useState(0);
-    const [click, setWords]=useState(0);
-
+    
+const countWords=()=>{
+    setWords(click+1)
+}
     const handleLeft=()=>{
     setNext(next-1);
     inputRef.current.focus();
     inputRef.current.style.color='red';
-    setWords(click+1)
     
     }
     const handleRight=()=>{
     setNext(next+1);
     inputRef.current.focus();
     inputRef.current.style.color='red';
-    setWords(next+1)
     }
 
-
-function Word({word, translation}){
-    
-    const [pressed, setPressed]=useState(false);
-
-    const handleChange=()=>{
-        setPressed(!pressed);
-    }
-    
-    useEffect(()=>{
-        setPressed(false)
-        inputRef.current.focus();
-    }, [word])
-
-    return(
-        <div className="wordCard">
-<div className="englishWord">
-    {word}<br/>
-</div>
-<input ref={inputRef} onClick={handleChange} className='inputEnglish' value={pressed?translation: 'Показать перевод'}>
-</input>
-    </div>
-    )
-}
 
     if (next===words.length){
 return <div>
@@ -70,8 +47,8 @@ return <div>
         <div className='card'>
         
         <div>
-        <Word  {...words[next]}/>
-        {next}/{words.length}</div>
+        <Word countWords={countWords} {...words[next]}/>
+        {next+1}/{words.length}</div>
         <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
         
         </div>
@@ -82,10 +59,37 @@ return <div>
     <div className='card'>
     <button onClick={handleLeft} className='arrowLeft'><i className="fa-solid fa-arrow-left"></i></button>
     <div>
-    <Word  {...words[next]}/>
-    {next}/{words.length}</div>
+    <Word countWords={countWords}  {...words[next]}/>
+    {next+1}/{words.length}</div>
     <button onClick={handleRight} className='arrowRight'><i className="fa-solid fa-arrow-right"></i></button>
     
     </div>Изучено {click} слов</div>}
 
+}
+
+function Word({word, translation, countWords}){
+    
+const inputRef=useRef(null);
+    const [pressed, setPressed]=useState(false);
+
+    const handleChange=()=>{
+        setPressed(!pressed);
+countWords();
+    }
+    
+    useEffect(()=>{
+        setPressed(false)
+        inputRef.current.focus();
+    }, [word])
+
+    return(
+        <div className="wordCard">
+<div className="englishWord">
+    {word}<br/>
+</div>
+<div>{pressed?<p ref={inputRef}>{translation}</p>:<button className='button' onClick={handleChange} ref={inputRef}>показать перевод</button>}</div>
+
+</div>
+
+    )
 }
