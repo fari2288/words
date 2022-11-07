@@ -70,7 +70,7 @@ return <div>
 
 }
 
-function Word({word, translation, countWords, pressed, setPressed}){
+function Word({word, translation, transcription, countWords, pressed, setPressed}){
     
 const inputRef=useRef(null);
     
@@ -88,6 +88,9 @@ countWords();
 <div className="englishWord">
     {word}<br/>
 </div>
+<div>{transcription}</div>
+
+
 <div>{pressed?<p ref={inputRef}>{translation}</p>:<button className='button' onClick={handleChange} ref={inputRef}>показать перевод</button>}</div>
 
 </div>
