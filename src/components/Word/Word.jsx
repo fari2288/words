@@ -10,14 +10,17 @@ import './card.css';
 export default function CardList(props){
     
 const inputRef=useRef();
-const [click, setWords]=useState(0);
-
+const [click, setClick]=useState(0);
+const [newWords, setWords]=useState(words)
 
 
     const [next, setNext]=useState(0);
     
 const countWords=()=>{
-    setWords(click+1)
+    setClick(click+1);
+    const wordList=[...newWords];
+    wordList[click].pressed=true;
+    setWords(wordList);
 }
     const handleLeft=()=>{
     setNext(next-1);
@@ -67,18 +70,16 @@ return <div>
 
 }
 
-function Word({word, translation, countWords}){
+function Word({word, translation, countWords, pressed, setPressed}){
     
 const inputRef=useRef(null);
-    const [pressed, setPressed]=useState(false);
+    
 
     const handleChange=()=>{
-        setPressed(!pressed);
 countWords();
     }
     
     useEffect(()=>{
-        setPressed(false)
         inputRef.current.focus();
     }, [word])
 
